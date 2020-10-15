@@ -1,0 +1,134 @@
+.SearchBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25rem;
+    /* align-items: center; */
+  }
+  
+  .SearchBar-sort-options ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.22rem;
+    color: #ffffff;
+    list-style: none; 
+  }
+  
+  .SearchBar-sort-options li {
+    cursor: pointer;
+    width: 4.33rem;
+    border-bottom: 1px solid #ffffff;
+    padding: 0 2.58rem .33rem 2.58rem;
+    line-height: 1.13;
+    text-align: center;
+    font-weight: 600;
+    font-size: .83rem;
+    transition: color .25s;
+    overflow: hidden;
+  }
+  
+  .SearchBar-sort-options li:hover {
+    color: #000000;
+  }
+  
+  .SearchBar-sort-options li.active,
+  .SearchBar-sort-options li.active:hover {
+    border-bottom: 1px solid #000000;
+    color: #000000;
+  }
+  
+  .SearchBar-fields {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2.88rem;
+    align-items: center;
+    
+  }
+  
+  .SearchBar-fields input {
+    margin: 3px;
+    width: 21rem;
+    padding: .66rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: .77rem;
+    font-weight: 500;
+  }
+
+  .example ul{
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+  .example ul li{ 
+    margin-right: 2rem;
+    background-color: #000000d6;
+    list-style: none;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+  } 
+
+  
+  .SearchBar-fields input:last-child {
+    margin-right: 0;
+  }
+  
+  .SearchBar-submit {
+    text-align: center;
+  }
+  
+  .SearchBar-submit button {
+    border-radius: 4px;
+    padding: .72rem 1.7rem;
+    background-color: #333333;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color .5s;
+    border: 2px solid #333333;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .SearchBar-submit button:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    outline: none;
+  }
+
+  .SearchBar-submit button:disabled {
+    background-color: #686868;
+    color: #ded8d8;
+    border: none;
+  }
+
+  
+  
+  @media only screen and (max-width: 560px) {
+    .SearchBar {
+      background-image: url('./background.jpg');
+    }
+  
+    .SearchBar-sort-options ul {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  
+    .SearchBar-fields {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .SearchBar-fields input {
+      margin-right: 0;
+      margin-bottom: .86rem;
+    }
+  }
