@@ -1,0 +1,58 @@
+.itemsContainer {
+  margin: 10px;
+  width: 300px;
+}
+
+.thumbnail {
+  border-radius: 2px;
+  width: 300px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+.channel {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.title {
+  color: #ffffff;
+}
+
+.date {
+  color: rgb(166, 166, 166);
+}
+
+.video {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+}
+
+@media (max-width: 500px) {
+  .itemsContainer {
+    width: 350px;
+    margin: 5px;
+    p {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  .thumbnail {
+    width: 350px;
+    height: 200px;
+  }
+  .title {
+    font-size: 1rem;
+  }
+}
