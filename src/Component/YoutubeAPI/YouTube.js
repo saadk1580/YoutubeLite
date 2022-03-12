@@ -4,7 +4,9 @@ let apiKey = process.env.REACT_APP_API_KEY;
 export const baseParams = {
   jquery: "libs/jquery/jquery",
   part: "snippet",
-  maxResults: 10,
+  chart: "mostPopular",
+  regionCode: "us",
+  maxResults: 50,
   key: apiKey,
 };
 
