@@ -10,7 +10,7 @@ const App = () => {
   const s = useParams().param;
 
   const [data, updateData] = useState({
-    input: s === undefined ? "music" : s,
+    input: s === undefined ? "popular on youtube" : s,
     banner: "Trending Right Now...",
     title: [],
     thumbnail: [],
@@ -19,8 +19,6 @@ const App = () => {
     channelId: [],
     date: [],
   });
-
-  // console.log(data);
 
   const getData = async (params) => {
     const res = await youtube.get("/search", {
@@ -98,21 +96,22 @@ const App = () => {
       <div className="results-container">
         {Array(data.title.length)
           .fill("")
-          .map((_, index) => (
-            <a href={`/video/${data.video[index]}`} key={index}>
-              <div key={index}>
-                <ShowData
-                  className="items"
-                  title={data.title[index]}
-                  thumbnail={data.thumbnail[index]}
-                  des={data.description[index]}
-                  date={data.date[index]}
-                  videoId={`https://www.youtube.com/embed/${data.video[index]}`}
-                  channelId={data.channelId[index]}
-                />
-              </div>
-            </a>
-          ))}
+          .map((_, index) => {
+            if (data.video[index] !== undefined)
+              return (
+                <div key={index}>
+                  <ShowData
+                    className="items"
+                    title={data.title[index]}
+                    thumbnail={data.thumbnail[index]}
+                    des={data.description[index]}
+                    date={data.date[index]}
+                    videoId={`https://www.youtube.com/embed/${data.video[index]}`}
+                    channelId={data.channelId[index]}
+                  />
+                </div>
+              );
+          })}
       </div>
     </div>
   );

@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 
-export default function Login_Page() {
+export default function LoginPage() {
   const [loggedIn, setLoggedIn] = useState("Login");
   const [subscriptions, setSubs] = useState([]);
 
   function authenticate() {
-    // console.log(gapi.auth2.getAuthInstance());
     return gapi.auth2
       .getAuthInstance()
-      .signIn({ scope: "https://www.googleapis.com/auth/youtube" })
+      .signIn({ scope: "https://www.googleapis.com/auth/youtube.force-ssl" })
       .then(
         function (res) {
-          console.log(res);
           localStorage.setItem("token", res.xc.access_token);
           setLoggedIn("Log Out");
         },
@@ -22,7 +20,7 @@ export default function Login_Page() {
       );
   }
   function loadClient() {
-    gapi.client.setApiKey("AIzaSyBkErR62ivhis6ZA16oJk_6VoWXvOjG8Go");
+    gapi.client.setApiKey(process.env.REACT_APP_API_KEY);
 
     return gapi.client
       .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
@@ -49,7 +47,6 @@ export default function Login_Page() {
           // Handle the results here (response.result has the parsed body).
 
           if (subscriptions.length === 0) {
-            console.log("yes");
             setSubs(response.result.items);
           }
           console.log(response);
@@ -88,7 +85,6 @@ export default function Login_Page() {
       execute();
     }
   }, [loggedIn]);
-
   return (
     <div>
       <button

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import "./NavBar.scss";
-import Login_Page from "../Login_page/Login_page";
+import LoginPage from "../Login_page/LoginPage";
 
 export default function Navbar({ updateInput, data, getData }) {
   const [input, setInput] = useState("news");
@@ -42,7 +42,7 @@ export default function Navbar({ updateInput, data, getData }) {
       </div>
 
       <div className="Location-feild">
-        <Login_Page />
+        <LoginPage />
       </div>
     </div>
   );

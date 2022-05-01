@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function SingleData(props) {
-  console.log(props);
   return (
     <div>
       <iframe

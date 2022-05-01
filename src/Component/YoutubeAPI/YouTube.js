@@ -6,7 +6,7 @@ export const baseParams = {
   part: "snippet",
   chart: "mostPopular",
   regionCode: "us",
-  maxResults: 50,
+  maxResults: 200,
   key: apiKey,
 };
 
